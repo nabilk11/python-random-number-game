@@ -39,10 +39,9 @@ while True: #will continue as long as true, or until break appears - this condit
     if user_guess == random_number:
         print("You got it!")
         break
+    elif user_guess > random_number:
+        print("Your guess is a little high...")
     else:
-        if user_guess > random_number:
-            print("Your guess is a little high...")
-        else:
-            print("Your guess is a little low...")
+        print("Your guess is a little low...")
 
 print("You got it in", guesses, "guesses!")
