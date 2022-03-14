@@ -1,5 +1,4 @@
 # Random Number Guessing Game
-import quopri
 import random
 
 print("********WELCOME TO THE RANDOM NUMBER GUESSING GAME!********")
@@ -26,5 +25,18 @@ else:
     quit()
 
 random_number = random.randint(0, top_of_range) # random.randrange = random number (start, stop) not including stop
-print(random_number)                       # random.randint = will include the stop point
+                                                   # random.randint = will include the stop point
+print("Time to guess a number between 0 and the number you chose!")
+while True: #will continue as long as true, or until break appears - this conditon is infinte without break
+    user_guess = input("Make a Guess: ")
+    if user_guess.isdigit():
+        user_guess = int(user_guess)
+    else:
+        print("Hey, that's not a number! Pick an actual number next time!")
+        continue
 
+    if user_guess == random_number:
+        print("You got it!")
+        break
+    else:
+        print("Sorry not the number! :(")
