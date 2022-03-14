@@ -25,9 +25,10 @@ else:
     quit()
 
 random_number = random.randint(0, top_of_range) # random.randrange = random number (start, stop) not including stop
-                                                   # random.randint = will include the stop point
+guesses = 0                        # random.randint = will include the stop point
 print("Time to guess a number between 0 and the number you chose!")
 while True: #will continue as long as true, or until break appears - this conditon is infinte without break
+    guesses += 1
     user_guess = input("Make a Guess: ")
     if user_guess.isdigit():
         user_guess = int(user_guess)
@@ -39,4 +40,9 @@ while True: #will continue as long as true, or until break appears - this condit
         print("You got it!")
         break
     else:
-        print("Sorry not the number! :(")
+        if user_guess > random_number:
+            print("Your guess is a little high...")
+        else:
+            print("Your guess is a little low...")
+
+print("You got it in", guesses, "guesses!")
